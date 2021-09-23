@@ -1,6 +1,7 @@
 # weblanjutci
-- Muhammad Irfan Ardiansyah
-- 1917051034
+- Nama  : Muhammad Irfan Ardiansyah
+- NPM   : 1917051034
+# =========================================
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
