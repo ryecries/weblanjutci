@@ -13,10 +13,6 @@
         </div>
     </div>
     <div class="row mt-4">
-        <div class="col-md-6">
-        </div>
-    </div>
-    <div class="row mt-4">
         <div class="col-md-4 mb-3">
             <div class="card" style="width: 18rem;">
                 <img src="https://source.unsplash.com/720x320/?fire" class="card-img-top" alt="...">
