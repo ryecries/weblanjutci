@@ -9,7 +9,7 @@ class Posts extends Migration
 	public function up()
 	{
 		$this->forge->addField([
-			'posts_id'          => [
+			'post_id'          => [
 				'type'           => 'INT',
 				'constraint'     => 11,
 				'unsigned'       => true,
@@ -21,7 +21,6 @@ class Posts extends Migration
 			],
 			'deskripsi' => [
 				'type' => 'TEXT',
-				'null' => true,
 			],
 			'gambar'       => [
 				'type'       => 'VARCHAR',
@@ -40,16 +39,16 @@ class Posts extends Migration
 				'constraint' => 100,
 				'unique'	 => 'true',
 			],
-			'created at' => [
+			'created_at' => [
 				'type' => 'DATETIME',
 				'null' => true,
 			],
-			'updated at' => [
+			'updated_at' => [
 				'type' => 'DATETIME',
 				'null' => true,
 			],
 		]);
-		$this->forge->addKey('posts_id', true);
+		$this->forge->addKey('post_id', true);
 		$this->forge->createTable('posts');
 	}
 
