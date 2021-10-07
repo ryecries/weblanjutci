@@ -40,9 +40,13 @@ $routes->get('/', function () {
 	echo view('v_home');
 	echo view('layouts/footer');
 });
+$routes->get('/admin', 'Templating::index');
+
+$routes->get('/register', 'Templating::register');
+
+$routes->post('/saveRegister', 'Templating::saveRegister');
 
 $routes->get('/posts', 'PostController::index');
-$routes->get('/admin', 'Templating::index');
 
 $routes->get('/about', function () {
 	$data = [
