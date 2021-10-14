@@ -23,6 +23,7 @@ $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
 
+
 /*
  * --------------------------------------------------------------------
  * Route Definitions
@@ -40,14 +41,14 @@ $routes->get('/', function () {
 	echo view('v_home');
 	echo view('layouts/footer');
 });
-$routes->get('/admin', 'Templating::index');
 
 $routes->get('/register', 'Templating::register');
-
-$routes->post('/saveRegister', 'Templating::saveRegister');
-
+$routes->post('/save', 'Templating::save');
 $routes->get('/posts', 'PostController::index');
-
+$routes->get('/admin', 'Templating::index');
+$routes->get('/admin/posts', 'AdminPostController::index');
+$routes->get('/admin/posts/create', 'AdminPostController::create');
+$routes->get('/admin/posts/store', 'AdminPostController::store');
 $routes->get('/about', function () {
 	$data = [
 		'title' => "Blog - About"

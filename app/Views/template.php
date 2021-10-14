@@ -30,6 +30,7 @@
 
 <?= $this->renderSection('content'); ?>
 
+
 <!-- jQuery -->
 <script src="/assets/adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -64,6 +65,8 @@
 <script src="/assets/adminlte/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/assets/adminlte/dist/js/pages/dashboard.js"></script>
+
+<?php $this->renderSection('myscript'); ?>
 </body>
 
 </html>
