@@ -164,7 +164,7 @@
                         <img src="/assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Ryecries</a>
+                        <a href="#" class="d-block">achieto</a>
                     </div>
                 </div>
 
@@ -219,8 +219,40 @@
             <div class="container">
                 <a href="/admin/posts/create" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Data</a>
             </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Judul</th>
+                                <th scope="col">slug</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Kategori</th>
+                                <th scope="col">action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($posts as $i => $post) : ?>
+                                <tr>
+                                    <th scope="row"><?= $i + 1; ?></th>
+                                    <td><?= $post['judul']; ?></td>
+                                    <td><?= $post['slug']; ?></td>
+                                    <td><?= $post['author']; ?></td>
+                                    <td><?= $post['kategori']; ?></td>
+                                    <td>
+                                        <a href="/posts/edit/<?= $post['slug']; ?>" class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"> Edit</i></a>
+                                        <a href="/posts/delete/<?= $post['slug']; ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"> Delete</i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <!--bakal dirubah -->
             </section>
+
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->

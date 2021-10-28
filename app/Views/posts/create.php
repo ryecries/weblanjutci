@@ -164,7 +164,7 @@
                         <img src="/assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Ryecries</a>
+                        <a href="#" class="d-block">achieto</a>
                     </div>
                 </div>
 
@@ -216,6 +216,7 @@
             </div>
             <!-- /.content-header -->
             <!-- Main Content -->
+
             <div class="container">
                 <div class="card">
                     <div class="card-header">
@@ -227,19 +228,39 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="judul">Judul Postingan</label>
-                                        <input type="text" class="form-control" id="judul" name="judul">
+                                        <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>" id="judul" name="judul" value="<?= old('judul'); ?>">
+                                        <?php if ($validation->hasError('judul')) : ?>
+                                            <div class="invalid-feedback">
+                                                <?php echo $validation->getError('judul'); ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="judul">Slug</label>
-                                        <input type="text" class="form-control" id="slug" name="slug">
+                                        <input type="text" class="form-control <?= ($validation->hasError('slug')) ? 'is-invalid' : ''; ?>" id="slug" name="slug" value="<?= old('slug'); ?>">
+                                        <?php if ($validation->hasError('slug')) : ?>
+                                            <div class=" invalid-feedback">
+                                                <?php echo $validation->getError('slug'); ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="judul">Kategori Postingan</label>
-                                        <input type="text" class="form-control" id="kategori" name="kategori">
+                                        <input type="text" class="form-control <?= ($validation->hasError('kategori')) ? 'is-invalid' : ''; ?>" id="kategori" name="kategori" value="<?= old('kategori'); ?>">
+                                        <?php if ($validation->hasError('kategori')) : ?>
+                                            <div class=" invalid-feedback">
+                                                <?php echo $validation->getError('kategori'); ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="judul">Author</label>
-                                        <input type="text" class="form-control" id="author" name="author">
+                                        <input type="text" class="form-control <?= ($validation->hasError('author')) ? 'is-invalid' : ''; ?>" id="author" name="author" value="<?= old('author'); ?>">
+                                        <?php if ($validation->hasError('author')) : ?>
+                                            <div class=" invalid-feedback">
+                                                <?php echo $validation->getError('author'); ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <button type="submit" class="btn btn-primary">
                                         <i class="fas fa-paper-plane"></i> Submit
