@@ -163,7 +163,7 @@
                         <img src="/assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Muhammad Bintang</a>
+                        <a href="#" class="d-block">Ryecries</a>
                     </div>
                 </div>
 
@@ -240,11 +240,11 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="post_title">Judul Postingan</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('post_title')) ? 'is-invalid' : ''; ?>" id="post_title" name="post_title" value="<?= $posts['post_title']; ?>">
-                                        <?php if ($validation->hasError('post_title')) : ?>
+                                        <label for="judul">Judul Postingan</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>" id="judul" name="judul" value="<?= $posts['judul']; ?>">
+                                        <?php if ($validation->hasError('judul')) : ?>
                                             <div class="invalid-feedback">
-                                                <?= $validation->getError("post_title"); ?>
+                                                <?= $validation->getError("judul"); ?>
                                             </div>
                                         <?php endif; ?>
                                     </div>
@@ -258,20 +258,20 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="form-group">
-                                        <label for="post_category">Kategori Postingan</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('post_category')) ? 'is-invalid' : ''; ?>" id="post_category" name="post_category" value="<?= $posts['post_category']; ?>">
-                                        <?php if ($validation->hasError('post_category')) : ?>
+                                        <label for="kategori">Kategori Postingan</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('kategori')) ? 'is-invalid' : ''; ?>" id="kategori" name="kategori" value="<?= $posts['kategori']; ?>">
+                                        <?php if ($validation->hasError('kategori')) : ?>
                                             <div class="invalid-feedback">
-                                                <?= $validation->getError("post_category"); ?>
+                                                <?= $validation->getError("kategori"); ?>
                                             </div>
                                         <?php endif; ?>
                                     </div>
                                     <div class="form-group">
-                                        <label for="post_author">Author</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('post_author')) ? 'is-invalid' : ''; ?>" id="post_author" name="post_author" value="<?= $posts['post_author']; ?>">
-                                        <?php if ($validation->hasError('post_author')) : ?>
+                                        <label for="author">Author</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('author')) ? 'is-invalid' : ''; ?>" id="author" name="author" value="<?= $posts['author']; ?>">
+                                        <?php if ($validation->hasError('author')) : ?>
                                             <div class="invalid-feedback">
-                                                <?= $validation->getError("post_author"); ?>
+                                                <?= $validation->getError("author"); ?>
                                             </div>
                                         <?php endif; ?>
                                     </div>
@@ -280,14 +280,14 @@
                                     </button>
                                 </div>
                                 <div class="col-md-8">
-                                    <label for="post_description">Deskripsi Postingan</label>
+                                    <label for="deskripsi">Deskripsi Postingan</label>
                                     <br>
-                                    <textarea name="post_description" id="post_description" class="form-control <?= ($validation->hasError('post_description')) ? 'is-invalid' : ''; ?>"><?= $posts['post_description']; ?>
+                                    <textarea name="deskripsi" id="deskripsi" class="form-control <?= ($validation->hasError('deskripsi')) ? 'is-invalid' : ''; ?>"><?= $posts['deskripsi']; ?>
                           
                           </textarea>
-                                    <?php if ($validation->hasError('post_description')) : ?>
+                                    <?php if ($validation->hasError('deskripsi')) : ?>
                                         <div class="invalid-feedback">
-                                            <?= $validation->getError("post_description"); ?>
+                                            <?= $validation->getError("deskripsi"); ?>
                                         </div>
                                     <?php endif; ?>
 
@@ -316,6 +316,6 @@
 
 <?php $this->section('myscript'); ?>
 <script>
-    $('#post_description').summernote()
+    $('#deskripsi').summernote()
 </script>
 <?php $this->endSection(); ?>

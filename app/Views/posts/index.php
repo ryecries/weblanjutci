@@ -163,7 +163,7 @@
                         <img src="/assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Muhammad Bintang</a>
+                        <a href="#" class="d-block">Ryecries</a>
                     </div>
                 </div>
 
@@ -250,10 +250,10 @@
                                     <?php foreach ($posts as $i => $post) : ?>
                                         <tr>
                                             <th scope="row"> <?= $i + 1; ?></th>
-                                            <td><?= $post['post_title']; ?></td>
+                                            <td><?= $post['judul']; ?></td>
                                             <td><?= $post['slug']; ?></td>
-                                            <td><?= $post['post_author']; ?></td>
-                                            <td><?= $post['post_category']; ?></td>
+                                            <td><?= $post['author']; ?></td>
+                                            <td><?= $post['kategori']; ?></td>
                                             <td>
                                                 <a href="/admin/posts/edit/<?= $post['slug']; ?>" class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i> Edit</a>
                                                 <form action="/admin/posts/<?= $post['slug']; ?>" method="post" class="d-inline">

@@ -35,7 +35,7 @@ class AdminPostsController extends BaseController
     public function store()
     {
         $valid = $this->validate([
-            "post_title" => [
+            "judul" => [
                 "label" => "Judul",
                 "rules" => "required",
                 "errors" => [
@@ -50,21 +50,21 @@ class AdminPostsController extends BaseController
                     "is_unique" => "{field} sudah ada!",
                 ]
             ],
-            "post_category" => [
+            "kategori" => [
                 "label" => "Kategori",
                 "rules" => "required",
                 "errors" => [
                     "required" => "{field} Harus Diisi!",
                 ]
             ],
-            "post_author" => [
+            "author" => [
                 "label" => "Author",
                 "rules" => "required",
                 "errors" => [
                     "required" => "{field} Harus Diisi!",
                 ]
             ],
-            "post_description" => [
+            "deskripsi" => [
                 "label" => "Deskripsi",
                 "rules" => "required",
                 "errors" => [
@@ -75,11 +75,11 @@ class AdminPostsController extends BaseController
 
         if ($valid) {
             $data = [
-                'post_title' => $this->request->getVar('post_title'),
+                'judul' => $this->request->getVar('judul'),
                 'slug' => $this->request->getVar("slug"),
-                'post_category' => $this->request->getVar("post_category"),
-                'post_author' => $this->request->getVar("post_author"),
-                'post_description' => $this->request->getVar("post_description")
+                'kategori' => $this->request->getVar("kategori"),
+                'author' => $this->request->getVar("author"),
+                'deskripsi' => $this->request->getVar("deskripsi")
             ];
             $PostModel = model("PostModel");
             $PostModel->insert($data);
@@ -119,7 +119,7 @@ class AdminPostsController extends BaseController
         }
 
         $valid = $this->validate([
-            "post_title" => [
+            "judul" => [
                 "label" => "Judul",
                 "rules" => "required",
                 "errors" => [
@@ -134,21 +134,21 @@ class AdminPostsController extends BaseController
                     "is_unique" => "{field} sudah ada!",
                 ]
             ],
-            "post_category" => [
+            "kategori" => [
                 "label" => "Kategori",
                 "rules" => "required",
                 "errors" => [
                     "required" => "{field} Harus Diisi!",
                 ]
             ],
-            "post_author" => [
+            "author" => [
                 "label" => "Author",
                 "rules" => "required",
                 "errors" => [
                     "required" => "{field} Harus Diisi!",
                 ]
             ],
-            "post_description" => [
+            "deskripsi" => [
                 "label" => "Deskripsi",
                 "rules" => "required",
                 "errors" => [

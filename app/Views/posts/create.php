@@ -165,7 +165,7 @@
                         <img src="/assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Muhammad Bintang</a>
+                        <a href="#" class="d-block">Ryecries</a>
                     </div>
                 </div>
 
@@ -229,29 +229,29 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="post_title">Judul Postingan</label>
-                                        <input type="text" class="form-control" id="post_title" name="post_title">
+                                        <label for="judul">Judul Postingan</label>
+                                        <input type="text" class="form-control" id="judul" name="judul">
                                     </div>
                                     <div class="form-group">
                                         <label for="slug">slug</label>
                                         <input type="text" class="form-control" id="slug" name="slug">
                                     </div>
                                     <div class="form-group">
-                                        <label for="post_category">Kategori Postingan</label>
-                                        <input type="text" class="form-control" id="post_category" name="post_category">
+                                        <label for="kategori">Kategori Postingan</label>
+                                        <input type="text" class="form-control" id="kategori" name="kategori">
                                     </div>
                                     <div class="form-group">
-                                        <label for="post_author">Author</label>
-                                        <input type="text" class="form-control" id="post_author" name="post_author">
+                                        <label for="author">Author</label>
+                                        <input type="text" class="form-control" id="author" name="author">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit
                                         <i class="fas fa-paper-plane"></i>
                                     </button>
                                 </div>
                                 <div class="col-md-8">
-                                    <label for="post_description">Deskripsi Postingan</label>
+                                    <label for="deskripsi">Deskripsi Postingan</label>
                                     <br>
-                                    <textarea name="post_description" id="post_description"></textarea>
+                                    <textarea name="deskripsi" id="deskripsi"></textarea>
                                 </div>
                             </div>
                         </form>
@@ -281,6 +281,6 @@
 
 <?= $this->section('myscript'); ?>
 <script>
-    $('#post_description').summernote()
+    $('#deskripsi').summernote()
 </script>
 <?= $this->endSection(); ?>

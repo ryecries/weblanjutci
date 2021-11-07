@@ -14,7 +14,7 @@ class PostModel extends Model
 	// protected $returnType           = 'array';
 	// protected $useSoftDeletes       = false;
 	// protected $protectFields        = true;
-	protected $allowedFields        = ['post_title', 'post_description', 'post_thumbnail', 'post_author', 'post_category', 'slug', 'created_at', 'updated_at'];
+	protected $allowedFields        = ['judul', 'deskripsi', 'gambar', 'author', 'kategori', 'slug', 'created_at', 'updated_at'];
 
 	// Dates
 	protected $useTimestamps        = true;
