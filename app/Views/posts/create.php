@@ -3,6 +3,7 @@
 <?= $this->section('content'); ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -153,7 +154,7 @@
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="/assets/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">Blog App</span>
             </a>
 
             <!-- Sidebar -->
@@ -164,7 +165,7 @@
                         <img src="/assets/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">achieto</a>
+                        <a href="#" class="d-block">Muhammad Bintang</a>
                     </div>
                 </div>
 
@@ -173,7 +174,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li>
+                        <li class="nav-item">
                             <a href="/admin" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
@@ -181,11 +182,11 @@
                                 </p>
                             </a>
                         </li>
-                        <li>
-                            <a href="/admin/posts" class="nav-link">
-                                <i class="nav-icon fas fa-book-open"></i>
+                        <li class="nav-item">
+                            <a href="/admin/posts" class="nav-link active">
+                                <i class="nav-icon fas fa-book"></i>
                                 <p>
-                                    My Post
+                                    My Posts
                                 </p>
                             </a>
                         </li>
@@ -203,86 +204,69 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Tambah Post</h1>
+                            <h1 class="m-0">Dashboard</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
+                                <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/admin/posts">My Posts</a></li>
+                                <li class="breadcrumb-item active">Create</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
-            <!-- Main Content -->
 
+            <!-- Main Content -->
             <div class="container">
                 <div class="card">
                     <div class="card-header">
-                        Form Tambah Post
+                        Form Tambah Posts
                     </div>
                     <div class="card-body">
                         <form action="/admin/posts/store" method="post">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="judul">Judul Postingan</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>" id="judul" name="judul" value="<?= old('judul'); ?>">
-                                        <?php if ($validation->hasError('judul')) : ?>
-                                            <div class="invalid-feedback">
-                                                <?php echo $validation->getError('judul'); ?>
-                                            </div>
-                                        <?php endif; ?>
+                                        <label for="post_title">Judul Postingan</label>
+                                        <input type="text" class="form-control" id="post_title" name="post_title">
                                     </div>
                                     <div class="form-group">
-                                        <label for="judul">Slug</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('slug')) ? 'is-invalid' : ''; ?>" id="slug" name="slug" value="<?= old('slug'); ?>">
-                                        <?php if ($validation->hasError('slug')) : ?>
-                                            <div class=" invalid-feedback">
-                                                <?php echo $validation->getError('slug'); ?>
-                                            </div>
-                                        <?php endif; ?>
+                                        <label for="slug">slug</label>
+                                        <input type="text" class="form-control" id="slug" name="slug">
                                     </div>
                                     <div class="form-group">
-                                        <label for="judul">Kategori Postingan</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('kategori')) ? 'is-invalid' : ''; ?>" id="kategori" name="kategori" value="<?= old('kategori'); ?>">
-                                        <?php if ($validation->hasError('kategori')) : ?>
-                                            <div class=" invalid-feedback">
-                                                <?php echo $validation->getError('kategori'); ?>
-                                            </div>
-                                        <?php endif; ?>
+                                        <label for="post_category">Kategori Postingan</label>
+                                        <input type="text" class="form-control" id="post_category" name="post_category">
                                     </div>
                                     <div class="form-group">
-                                        <label for="judul">Author</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('author')) ? 'is-invalid' : ''; ?>" id="author" name="author" value="<?= old('author'); ?>">
-                                        <?php if ($validation->hasError('author')) : ?>
-                                            <div class=" invalid-feedback">
-                                                <?php echo $validation->getError('author'); ?>
-                                            </div>
-                                        <?php endif; ?>
+                                        <label for="post_author">Author</label>
+                                        <input type="text" class="form-control" id="post_author" name="post_author">
                                     </div>
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fas fa-paper-plane"></i> Submit
+                                    <button type="submit" class="btn btn-primary">Submit
+                                        <i class="fas fa-paper-plane"></i>
                                     </button>
                                 </div>
                                 <div class="col-md-8">
-                                    <label for="deskripsi">Deskripsi Postingan</label>
+                                    <label for="post_description">Deskripsi Postingan</label>
                                     <br>
-                                    <textarea name="deskripsi" id="deskripsi"></textarea>
+                                    <textarea name="post_description" id="post_description"></textarea>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <!--bakal dirubah -->
-            </section>
-            <!-- /.content -->
+            <!-- Main Content -->
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; Praktikum Web Lanjut
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.1.0
+            </div>
         </footer>
 
         <!-- Control Sidebar -->
@@ -292,12 +276,11 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+</body>
+<?= $this->endSection(); ?>
 
-    <?= $this->endSection(); ?>
-
-    <?php $this->section('myscript'); ?>
-    <script>
-        $('#deskripsi').summernote()
-    </script>
-
-    <?php $this->endSection(); ?>
+<?= $this->section('myscript'); ?>
+<script>
+    $('#post_description').summernote()
+</script>
+<?= $this->endSection(); ?>

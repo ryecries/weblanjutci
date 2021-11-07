@@ -183,7 +183,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                with font-awesome or any other icon font library -->
+              with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="/admin" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -226,49 +226,75 @@
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
+
+
+
             <!-- Main content -->
             <div class="container">
-                <a href="/admin/posts/create" class="btn btn-primary"><i class="fas fa-plus"></i>Tambah Data</a>
-                <div class="card mt-3">
+                <div class="card">
                     <div class="card-header">
-                        Daftar Postingan
+                        Form Edit Posts
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped text-center">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No.</th>
-                                        <th scope="col">Judul</th>
-                                        <th scope="col">Slug</th>
-                                        <th scope="col">Author</th>
-                                        <th scope="col">Kategori</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($posts as $i => $post) : ?>
-                                        <tr>
-                                            <th scope="row"> <?= $i + 1; ?></th>
-                                            <td><?= $post['post_title']; ?></td>
-                                            <td><?= $post['slug']; ?></td>
-                                            <td><?= $post['post_author']; ?></td>
-                                            <td><?= $post['post_category']; ?></td>
-                                            <td>
-                                                <a href="/admin/posts/edit/<?= $post['slug']; ?>" class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i> Edit</a>
-                                                <form action="/admin/posts/<?= $post['slug']; ?>" method="post" class="d-inline">
-                                                    <?= csrf_field(); ?>
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <button type="submit" class="btn btn-sm btn-danger me-1" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); "><i class="fas fa-hapus"></i> Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                        <form action="/admin/posts/update/<?= $posts['post_id']; ?>" method="POST">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="post_title">Judul Postingan</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('post_title')) ? 'is-invalid' : ''; ?>" id="post_title" name="post_title" value="<?= $posts['post_title']; ?>">
+                                        <?php if ($validation->hasError('post_title')) : ?>
+                                            <div class="invalid-feedback">
+                                                <?= $validation->getError("post_title"); ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="slug">Slug</label>
+                                        <input type="text" class="form-control disable <?= ($validation->hasError('slug')) ? 'is-invalid' : ''; ?>" id="slug" name="slug" value="<?= $posts['slug']; ?>" readonly>
+                                        <?php if ($validation->hasError('slug')) : ?>
+                                            <div class="invalid-feedback">
+                                                <?= $validation->getError("slug"); ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="post_category">Kategori Postingan</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('post_category')) ? 'is-invalid' : ''; ?>" id="post_category" name="post_category" value="<?= $posts['post_category']; ?>">
+                                        <?php if ($validation->hasError('post_category')) : ?>
+                                            <div class="invalid-feedback">
+                                                <?= $validation->getError("post_category"); ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="post_author">Author</label>
+                                        <input type="text" class="form-control <?= ($validation->hasError('post_author')) ? 'is-invalid' : ''; ?>" id="post_author" name="post_author" value="<?= $posts['post_author']; ?>">
+                                        <?php if ($validation->hasError('post_author')) : ?>
+                                            <div class="invalid-feedback">
+                                                <?= $validation->getError("post_author"); ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i> Simpan Edit
+                                    </button>
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="post_description">Deskripsi Postingan</label>
+                                    <br>
+                                    <textarea name="post_description" id="post_description" class="form-control <?= ($validation->hasError('post_description')) ? 'is-invalid' : ''; ?>"><?= $posts['post_description']; ?>
+                          
+                          </textarea>
+                                    <?php if ($validation->hasError('post_description')) : ?>
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError("post_description"); ?>
+                                        </div>
+                                    <?php endif; ?>
 
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <!-- /.content -->
@@ -276,10 +302,6 @@
         <!-- /.content-wrapper -->
         <footer class="main-footer">
             <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.1.0
-            </div>
         </footer>
 
         <!-- Control Sidebar -->
@@ -291,3 +313,9 @@
 <!-- ./wrapper -->
 
 <?= $this->endSection(); ?>
+
+<?php $this->section('myscript'); ?>
+<script>
+    $('#post_description').summernote()
+</script>
+<?php $this->endSection(); ?>
